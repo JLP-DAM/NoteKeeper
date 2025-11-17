@@ -5,50 +5,56 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_app"
     tools:context=".MainActivity">
 
+    <ImageButton
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/baseline_menu_24"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints"
+        android:background=""
+        app:tint="@color/white"/>
 
+    <ImageButton
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/baseline_add_24"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="368dp"
+        tools:layout_editor_absoluteY="16dp"
+        android:background=""
+        app:tint="@color/white"/>
 
-    <LinearLayout
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:orientation="vertical">
+    <ImageButton
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/baseline_person_24"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="332dp"
+        tools:layout_editor_absoluteY="16dp"
+        android:background=""
+        app:tint="@color/white"
+        />
 
+    <ImageButton
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/baseline_delete_24"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="368dp"
+        tools:layout_editor_absoluteY="696dp"
+        android:background=""
+        app:tint="@color/white"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </LinearLayout>
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="80dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

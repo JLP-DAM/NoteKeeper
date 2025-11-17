@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NoteKeeper">
         <activity
+            android:name=".registro"
+            android:exported="false" />
+        <activity
+            android:name=".iniciarSesion"
+            android:exported="false" />
+        <activity
+            android:name=".log_in"
+            android:exported="false" />
+        <activity
+            android:name=".papelera"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

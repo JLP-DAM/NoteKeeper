@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NoteKeeper">
         <activity
+            android:name=".agenda"
+            android:exported="false" />
+        <activity
+            android:name=".recordatori"
+            android:exported="false" />
+        <activity
             android:name=".registro"
             android:exported="false" />
         <activity

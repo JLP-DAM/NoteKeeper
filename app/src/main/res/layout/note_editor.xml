@@ -24,7 +24,7 @@
             tools:layout_marginTop="8dp"
             tools:layout_marginLeft="16dp"
 
-            android:background=""
+            android:background="@color/transparent"
             app:tint="@color/white"
             />
 

@@ -9,6 +9,8 @@
     tools:context=".MainActivity">
 
     <ImageButton
+        android:id="@+id/menu_button"
+
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:src="@drawable/baseline_menu_24"
@@ -19,7 +21,7 @@
         tools:layout_marginTop="16dp"
         tools:layout_marginLeft="16dp"
 
-        android:background=""
+        android:background="@color/transparent"
         app:tint="@color/white"
         />
 
@@ -35,7 +37,7 @@
         tools:layout_marginRight="16dp"
         tools:layout_marginTop="16dp"
 
-        android:background=""
+        android:background="@color/transparent"
         app:tint="@color/white"
         />
 
@@ -50,7 +52,7 @@
         tools:layout_marginRight="48dp"
         tools:layout_marginTop="16dp"
 
-        android:background=""
+        android:background="@color/transparent"
         app:tint="@color/white"
         />
 
@@ -66,7 +68,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
 
-        android:background=""
+        android:background="@color/transparent"
 
         app:tint="@color/white"
         />
@@ -99,7 +101,7 @@
         tools:layout_marginRight="4dp"
         tools:layout_marginTop="4dp"
 
-        android:background=""
+        android:background="@color/transparent"
         app:tint="@color/black"
         />
 
@@ -149,13 +151,11 @@
     </ScrollView>
 
     <androidx.cardview.widget.CardView
-        android:visibility="gone"
-
         android:id="@+id/menu"
-        android:layout_width="300dp"
+        android:layout_width="-300dp"
         android:layout_height="match_parent"
 
-        app:layout_constraintLeft_toLeftOf="match_parent">
+        app:layout_constraintLeft_toLeftOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -174,7 +174,7 @@
 
                 android:textColor="@color/black"
 
-                android:background=""
+                android:background="@color/transparent"
                 />
 
             <Button
@@ -189,7 +189,7 @@
 
                 android:textColor="@color/black"
 
-                android:background=""
+                android:background="@color/transparent"
                 />
 
             <Button
@@ -204,7 +204,7 @@
 
                 android:textColor="@color/black"
 
-                android:background=""
+                android:background="@color/transparent"
                 />
 
             <Button
@@ -219,7 +219,7 @@
 
                 android:textColor="@color/black"
 
-                android:background=""
+                android:background="@color/transparent"
                 />
         </LinearLayout>
 

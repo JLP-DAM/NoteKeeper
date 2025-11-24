@@ -5,4 +5,5 @@
 
     <color name="background_app">#0E0B20</color>
     <color name="background_button">#EB1555</color>
+    <color name="transparent">#00000000</color>
 </resources>

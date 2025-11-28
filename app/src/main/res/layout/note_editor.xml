@@ -14,6 +14,8 @@
         android:backgroundTint="@color/background_button">
 
         <ImageButton
+            android:id="@+id/go_back"
+
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:src="@drawable/baseline_arrow_back_24"
@@ -21,8 +23,8 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
 
-            tools:layout_marginTop="8dp"
-            tools:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
 
             android:background="@color/transparent"
             app:tint="@color/white"

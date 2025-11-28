@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">NoteKeeper</string>
+    <string name="title_activity_compartides">Compartides</string>
+    <string name="title_activity_agenda">agenda</string>
+    <string name="title_activity_compartir">compartir</string>
 </resources>

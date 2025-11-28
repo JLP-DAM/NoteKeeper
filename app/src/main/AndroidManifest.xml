@@ -12,8 +12,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NoteKeeper">
         <activity
-            android:name=".agenda"
+            android:name=".iniciarSessio"
             android:exported="false" />
+        <activity
+            android:name=".compartir"
+            android:exported="false"
+            android:label="@string/title_activity_compartir"
+            android:theme="@style/Theme.NoteKeeper" />
+        <activity
+            android:name=".agenda"
+            android:exported="false"
+            android:label="@string/title_activity_agenda"
+            android:theme="@style/Theme.NoteKeeper" />
+        <activity
+            android:name=".ui.theme.agenda"
+            android:exported="false" />
+        <activity
+            android:name=".Compartides"
+            android:exported="false"
+            android:label="@string/title_activity_compartides"
+            android:theme="@style/Theme.NoteKeeper" />
         <activity
             android:name=".recordatori"
             android:exported="false" />

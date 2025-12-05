@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_app"
-    tools:context=".compartir">
+    tools:context=".perfil">
 
     <ImageButton
         android:id="@+id/menu_button"
@@ -26,10 +26,9 @@
         />
 
     <ImageButton
-        android:id="@+id/crear_nota"
         android:layout_width="32dp"
         android:layout_height="32dp"
-
+        android:id="@+id/crear_nota"
         android:src="@drawable/baseline_add_24"
 
         app:layout_constraintRight_toRightOf="parent"
@@ -60,49 +59,27 @@
         app:tint="@color/white"
         />
 
-
-    <TextView
-        android:id="@+id/msg_warning"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:textColor="@color/white"
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/user_icon"
+        app:layout_constraintTop_toBottomOf="@+id/crear_nota"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="30dp"
-        android:text="Has de registarte abans de poder compartir notes"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="30dp">
-    </TextView>
-
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        app:layout_constraintTop_toBottomOf="@+id/msg_warning"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:text="Log in"
-        android:backgroundTint="@color/background_button"
-        android:textColor="@color/white">
-
-    </Button>
+        android:src="@drawable/usuario"
+        android:layout_marginTop="40dp"
+        >
+    </ImageView>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login"
+        android:text="Unknow"
+        app:layout_constraintTop_toBottomOf="@+id/user_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:text="Create new account"
         android:textColor="@color/white"
-        android:layout_marginTop="10dp"
         >
 
     </TextView>
-
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     android:background="@color/background_app"
-    tools:context=".registro">
+    tools:context=".iniciar_sesion">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -17,7 +15,7 @@
         android:layout_marginBottom="20dp"
         android:id="@+id/imageLogo"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/card_inicar_session"
+        app:layout_constraintBottom_toTopOf="@+id/sign_in"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_chainStyle="packed"/>
@@ -28,8 +26,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         app:cardCornerRadius="20dp"
-        app:cardElevation="8dp"
-        android:id="@+id/card_inicar_session"
+        android:id="@+id/sign_in"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageLogo"
@@ -47,10 +44,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:text="Email"
-                android:textSize="16sp"
                 android:textColor="@color/white"
-                android:layout_marginBottom="8dp"/>
+                android:textSize="16sp" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -89,8 +86,8 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:text="Log in"
-                android:id="@+id/loginButton"
+                android:text="Sign In"
+                android:id="@+id/signinButton"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:backgroundTint="@color/background_button"
@@ -100,8 +97,5 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

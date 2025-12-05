@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NoteKeeper">
         <activity
+            android:name=".perfil"
+            android:exported="false" />
+        <activity
+            android:name=".nota_compartir"
+            android:exported="false" />
+        <activity
+            android:name=".iniciar_sesion"
+            android:exported="false" />
+        <activity
+            android:name=".nota_agenda"
+            android:exported="false" />
+        <activity
             android:name=".iniciarSessio"
             android:exported="false" />
         <activity

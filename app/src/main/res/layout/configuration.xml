@@ -58,7 +58,9 @@
             android:layout_height="50dp"
             android:text="Inicia la sessió"
 
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"
+
 
             app:layout_constraintBottom_toBottomOf="parent"/>
 
@@ -121,6 +123,10 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="Guardar i tornar"
+
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
 
         app:layout_constraintBottom_toBottomOf="parent"/>
 

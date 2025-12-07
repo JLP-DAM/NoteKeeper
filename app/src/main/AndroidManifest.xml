@@ -30,6 +30,16 @@
             android:name=".Configuration"
             android:exported="true">
         </activity>
+
+        <activity
+            android:name=".NoteShare"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".NoteBin"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>

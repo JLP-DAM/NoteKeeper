@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="72dp"
         android:layout_marginBottom="24dp"
         app:cardCornerRadius="16dp"
         app:cardElevation="4dp"
@@ -56,48 +56,40 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/notes_label"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="24dp"
-                    android:orientation="vertical">
+                    android:text="Notes:"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="8dp" />
 
-                    <TextView
-                        android:id="@+id/notes_label"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:text="Notas:"
-                        android:textColor="@color/black"
-                        android:textSize="16sp" />
-
-                    <EditText
-                        android:id="@+id/notes_edittext"
-                        android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:background="@drawable/edittext_background"
-                        android:gravity="top|start"
-                        android:hint="Escribe tu nota aquí..."
-                        android:padding="12dp"
-                        android:textColor="@color/black"
-                        android:textSize="14sp"
-                        android:inputType="textMultiLine" />
-                </LinearLayout>
+                <EditText
+                    android:id="@+id/notes_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:padding="12dp"
+                    android:hint="Escriu la teva nota aquí..."
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:gravity="top"
+                    android:layout_marginBottom="24dp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="24dp"
+                    android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:layout_marginBottom="24dp">
 
                     <TextView
                         android:id="@+id/category_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Categoría:"
-                        android:textColor="@color/black"
-                        android:textSize="16sp" />
+                        android:text="Categoria"
+                        android:textSize="16sp"
+                        android:textColor="@color/black" />
 
                     <View
                         android:layout_width="0dp"
@@ -107,61 +99,98 @@
                     <Spinner
                         android:id="@+id/category_spinner"
                         android:layout_width="180dp"
-                        android:layout_height="48dp"
-                        android:background="@drawable/spinner_background"
+                        android:layout_height="35dp"
+                        android:background="@color/white"
                         android:paddingStart="12dp"
                         android:paddingEnd="12dp" />
                 </LinearLayout>
 
+                <TextView
+                    android:id="@+id/asunto_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Asunto:"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="8dp" />
+
+                <EditText
+                    android:id="@+id/asunto_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:padding="12dp"
+                    android:hint="Escriu l'asunto aquí..."
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:gravity="top"
+                    android:maxLines="4"
+                    android:scrollbars="vertical"
+                    android:layout_marginBottom="24dp" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="24dp"
+                    android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:layout_marginBottom="24dp">
 
                     <TextView
-                        android:id="@+id/date_label"
+                        android:id="@+id/destinatari_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Fecha:"
-                        android:textColor="@color/black"
-                        android:textSize="16sp" />
+                        android:text="Destinatari:"
+                        android:textSize="16sp"
+                        android:textColor="@color/black" />
 
                     <View
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_weight="1" />
 
-                    <LinearLayout
+                    <EditText
+                        android:id="@+id/destinatari_edittext"
                         android:layout_width="180dp"
-                        android:layout_height="48dp"
-                        android:orientation="horizontal"
-                        android:background="@drawable/edittext_background"
-                        android:gravity="center_vertical"
-                        android:paddingStart="12dp"
-                        android:paddingEnd="12dp">
+                        android:layout_height="35dp"
+                        android:padding="8dp"
+                        android:hint="XXXXXXXXX"
+                        android:textSize="14sp"
+                        android:textColor="@color/black"
+                        android:background="@color/white"
+                        android:inputType="number"
+                        android:maxLength="9"
+                        android:gravity="center_vertical" />
+                </LinearLayout>
 
-                        <EditText
-                            android:id="@+id/date_edittext"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:hint="DD/MM/AAAA"
-                            android:inputType="none"
-                            android:textSize="16sp"
-                            android:background="@android:color/transparent"
-                            android:paddingVertical="12dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="24dp">
 
-                        <ImageButton
-                            android:id="@+id/btn_date_picker"
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/ic_calendar"
-                            android:tint="@color/black"
-                            android:contentDescription="Seleccionar fecha" />
-                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/data_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Data:"
+                        android:textSize="16sp"
+                        android:textColor="@color/black" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/selected_data_text"
+                        android:layout_width="180dp"
+                        android:layout_height="35dp"
+                        android:padding="8dp"
+                        android:hint="DD/MM/AAAA"
+                        android:textSize="14sp"
+                        android:textColor="@color/black"
+                        android:background="@color/white"
+                        android:gravity="center_vertical" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -171,7 +200,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/time_label"
+                        android:id="@+id/hora_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
@@ -189,12 +218,12 @@
                         android:timePickerMode="spinner" />
 
                     <TextView
-                        android:id="@+id/selected_time_text"
+                        android:id="@+id/selected_hora_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="12dp"
-                        android:text="Seleccionado: 9:41 AM"
+                        android:text="Seleccionat: 9:41 AM"
                         android:textColor="@color/black"
                         android:textSize="14sp" />
                 </LinearLayout>
@@ -202,17 +231,17 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="32dp"
+                    android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:layout_marginBottom="32dp">
 
                     <TextView
                         android:id="@+id/recurrence_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Recurrencia:"
-                        android:textColor="@color/black"
-                        android:textSize="16sp" />
+                        android:text="Recurrència:"
+                        android:textSize="16sp"
+                        android:textColor="@color/black" />
 
                     <View
                         android:layout_width="0dp"
@@ -222,8 +251,7 @@
                     <Spinner
                         android:id="@+id/recurrence_spinner"
                         android:layout_width="180dp"
-                        android:layout_height="48dp"
-                        android:background="@drawable/spinner_background"
+                        android:layout_height="35dp"
                         android:paddingStart="12dp"
                         android:paddingEnd="12dp" />
                 </LinearLayout>
@@ -233,10 +261,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="52dp"
                     android:text="Guardar Nota"
-                    android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:backgroundTint="@color/background_button"
+                    android:textColor="@color/white"
                     app:cornerRadius="12dp" />
 
             </LinearLayout>

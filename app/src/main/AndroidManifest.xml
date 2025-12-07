@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NoteKeeper">
         <activity
+            android:name=".cerrar_sesion"
+            android:exported="false" />
+        <activity
+            android:name=".edit_contrasenya"
+            android:exported="false" />
+        <activity
+            android:name=".edit_perfil"
+            android:exported="false" />
+        <activity
+            android:name=".ui.theme.edit_perfil"
+            android:exported="false" />
+        <activity
             android:name=".perfil"
             android:exported="false" />
         <activity

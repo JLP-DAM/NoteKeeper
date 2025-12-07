@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <TextView
             android:layout_width="250dp"
             android:layout_height="75dp"
@@ -29,6 +30,98 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="parent"
             />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+
+            android:gravity="center"
+
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+
+            android:text="Inicia la sessió per poder compartir notes i guardar-les al núvol."
+            android:textColor="@color/white"
+            android:textAlignment="gravity"
+            android:textSize="20dp"
+            android:textStyle="bold"
+
+            android:layout_marginTop="10dp"
+
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="Inicia la sessió"
+
+            android:layout_marginLeft="20dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="25dp"
+
+            android:gravity="center"
+
+            android:text="Tema"
+            android:textColor="@color/white"
+            android:textAlignment="gravity"
+            android:textSize="20dp"
+            android:textStyle="bold"
+
+            android:layout_marginTop="10dp"
+
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+
+            android:layout_marginLeft="10dp">
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Clar"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Fosc"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+
+        </RadioGroup>
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="Ajuda"
+
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="20dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"/>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/go_back"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Guardar i tornar"
+
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

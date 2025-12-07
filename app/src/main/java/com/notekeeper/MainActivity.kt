@@ -26,7 +26,8 @@ class MainActivity : AppCompatActivity() {
 
         val menuCardView = findViewById<CardView>(R.id.menu)
         val menuImageButton = findViewById<ImageButton>(R.id.menu_button)
-        val closeMenuButton = findViewById<Button>(R.id.close_menu)
+        val closeMenuButton = findViewById<ImageButton>(R.id.menu_close_button)
+        val configurationButton = findViewById<Button>(R.id.configuration)
         val createNoteImageButton = findViewById<ImageButton>(R.id.create_note)
 
         closeMenuButton.setOnClickListener {
@@ -39,6 +40,11 @@ class MainActivity : AppCompatActivity() {
 
         createNoteImageButton.setOnClickListener {
             val intent = Intent(this, NoteEditor::class.java)
+            startActivity(intent)
+        }
+
+        configurationButton.setOnClickListener {
+            val intent = Intent(this, Configuration::class.java)
             startActivity(intent)
         }
     }

@@ -246,6 +246,8 @@
                 />
 
             <Button
+                android:id="@+id/schedule"
+
                 android:layout_width="match_parent"
 
                 android:textAlignment="textStart"
@@ -278,6 +280,8 @@
                 />
 
             <Button
+                android:id="@+id/profile"
+
                 android:layout_width="match_parent"
 
                 android:textAlignment="textStart"

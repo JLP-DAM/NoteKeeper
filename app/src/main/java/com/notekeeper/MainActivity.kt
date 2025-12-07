@@ -29,6 +29,8 @@ class MainActivity : AppCompatActivity() {
         val closeMenuButton = findViewById<ImageButton>(R.id.menu_close_button)
         val configurationButton = findViewById<Button>(R.id.configuration)
         val shareButton = findViewById<Button>(R.id.share)
+        val scheduleButton = findViewById<Button>(R.id.schedule)
+        val profileButton = findViewById<Button>(R.id.profile)
         val createNoteImageButton = findViewById<ImageButton>(R.id.create_note)
         val binImageButton = findViewById<ImageButton>(R.id.bin)
 
@@ -57,6 +59,16 @@ class MainActivity : AppCompatActivity() {
 
         binImageButton.setOnClickListener {
             val intent = Intent(this, NoteBin::class.java)
+            startActivity(intent)
+        }
+
+        scheduleButton.setOnClickListener {
+            val intent = Intent(this, agenda::class.java)
+            startActivity(intent)
+        }
+
+        profileButton.setOnClickListener {
+            val intent = Intent(this, perfil::class.java)
             startActivity(intent)
         }
     }

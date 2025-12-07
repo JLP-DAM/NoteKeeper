@@ -2,7 +2,9 @@ package com.notekeeper
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.CalendarView
+import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -17,6 +19,12 @@ class agenda : AppCompatActivity() {
         val calendarView: CalendarView = findViewById(R.id.calendarView)
         calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
             val intent = Intent(this, nota_agenda::class.java)
+            startActivity(intent)
+        }
+
+        val binView: ImageButton = findViewById(R.id.papelera)
+        binView.setOnClickListener {
+            val intent = Intent(this, NoteBin::class.java)
             startActivity(intent)
         }
 

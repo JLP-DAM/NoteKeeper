@@ -11,7 +11,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="55dp"
-        android:src="@drawable/NoteKeeper"
+        android:src="@drawable/notekeeper"
         android:layout_marginBottom="20dp"
         android:id="@+id/imageLogo"
         app:layout_constraintTop_toTopOf="parent"

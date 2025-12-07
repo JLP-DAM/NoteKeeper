@@ -18,12 +18,6 @@
             android:name=".edit_contrasenya"
             android:exported="false" />
         <activity
-            android:name=".edit_perfil"
-            android:exported="false" />
-        <activity
-            android:name=".ui.theme.edit_perfil"
-            android:exported="false" />
-        <activity
             android:name=".perfil"
             android:exported="false" />
         <activity
@@ -35,9 +29,7 @@
         <activity
             android:name=".nota_agenda"
             android:exported="false" />
-        <activity
-            android:name=".iniciarSessio"
-            android:exported="false" />
+
         <activity
             android:name=".compartir"
             android:exported="false"
@@ -49,25 +41,9 @@
             android:label="@string/title_activity_agenda"
             android:theme="@style/Theme.NoteKeeper" />
         <activity
-            android:name=".ui.theme.agenda"
-            android:exported="false" />
-        <activity
-            android:name=".Compartides"
-            android:exported="false"
-            android:label="@string/title_activity_compartides"
-            android:theme="@style/Theme.NoteKeeper" />
-        <activity
-            android:name=".recordatori"
-            android:exported="false" />
-        <activity
             android:name=".registro"
             android:exported="false" />
-        <activity
-            android:name=".iniciarSesion"
-            android:exported="false" />
-        <activity
-            android:name=".log_in"
-            android:exported="false" />
+
         <activity
             android:name=".papelera"
             android:exported="false" />

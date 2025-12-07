@@ -11,4 +11,9 @@
     <color name="green">#4CAF50</color>
     <color name="red">#B80C0C</color>
     <color name="blue_light">#97ABEB</color>
+    <color name="transparent">#00000000</color>
+    <color name="yellow">#ffe670</color>
+    <color name="pink">#ffafdf</color>
+    <color name="purple">#d7b0ff</color>
+    <color name="dark_grey">#767676</color>
 </resources>

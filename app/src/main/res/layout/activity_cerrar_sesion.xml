@@ -20,17 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/papelera"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:src="@drawable/baseline_delete_24"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@color/background_app"
-        app:tint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+
 
     <ImageView
         android:id="@+id/user_icon"
@@ -55,5 +45,18 @@
         app:layout_constraintTop_toBottomOf="@+id/user_icon"
         android:layout_marginTop="16dp" />
 
+    <Button
+
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/background_button"
+        android:text="Log in"
+        android:textSize="18sp"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

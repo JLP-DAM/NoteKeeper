@@ -150,35 +150,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/acerca_de"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="8dp">
-
-                <View
-                    android:layout_width="24dp"
-                    android:layout_height="24dp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Acerca de nosaltres"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
-                    android:layout_marginStart="16dp" />
-
-                <ImageView
-                    android:layout_width="37dp"
-                    android:layout_height="37dp"
-                    android:src="@drawable/info"
-                    android:tint="@color/black"/>
-
-            </LinearLayout>
-
-            <LinearLayout
                 android:id="@+id/cerrar_sesion"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
@@ -206,16 +177,5 @@
 
     </androidx.cardview.widget.CardView>
 
-    <ImageButton
-        android:id="@+id/papelera"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:src="@drawable/baseline_delete_24"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@color/background_app"
-        app:tint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

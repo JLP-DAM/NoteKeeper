@@ -43,7 +43,7 @@ class NoteShare : AppCompatActivity() {
         }
 
         createNoteImageButton.setOnClickListener {
-            val intent = Intent(this, NoteEditor::class.java)
+            val intent = Intent(this, nota_compartir::class.java)
             startActivity(intent)
         }
 

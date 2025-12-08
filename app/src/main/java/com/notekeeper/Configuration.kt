@@ -30,5 +30,6 @@ class Configuration : AppCompatActivity() {
             val intent = Intent(this, iniciar_sesion::class.java)
             startActivity(intent)
         }
+
     }
 }

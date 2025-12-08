@@ -15,17 +15,13 @@
         <TextView
             android:layout_width="250dp"
             android:layout_height="75dp"
-
             android:gravity="center"
-
             android:text="Configuració"
             android:textColor="@color/white"
             android:textAlignment="gravity"
             android:textSize="24dp"
             android:textStyle="bold"
-
             android:layout_marginTop="10dp"
-
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="parent"
@@ -34,50 +30,40 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
-
             android:gravity="center"
-
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-
             android:text="Inicia la sessió per poder compartir notes i guardar-les al núvol."
             android:textColor="@color/white"
             android:textAlignment="gravity"
-            android:textSize="20dp"
-            android:textStyle="bold"
-
+            android:textSize="15sp"
             android:layout_marginTop="10dp"
-
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="parent"
             />
 
         <Button
+            android:id="@+id/btn_sigin"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:text="Inicia la sessió"
-
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="20dp"
-
-
+            android:backgroundTint="@color/background_button"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="30dp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
         <TextView
             android:layout_width="250dp"
             android:layout_height="25dp"
-
-            android:gravity="center"
-
+            android:layout_marginStart="30dp"
             android:text="Tema"
             android:textColor="@color/white"
             android:textAlignment="gravity"
             android:textSize="20dp"
             android:textStyle="bold"
-
             android:layout_marginTop="10dp"
-
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="parent"
@@ -93,17 +79,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="Clar"
+                android:layout_marginStart="20dp"
                 android:textColor="@color/white"
-                android:textSize="20dp"
-                android:textStyle="bold"/>
+                android:layout_marginTop="10sp"
+                android:textSize="18sp"/>
 
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="Fosc"
+                android:layout_marginStart="20dp"
                 android:textColor="@color/white"
-                android:textSize="20dp"
-                android:textStyle="bold"/>
+                android:textSize="18sp"/>
 
         </RadioGroup>
 
@@ -111,10 +98,10 @@
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:text="Ajuda"
-
-            android:layout_marginTop="40dp"
+            android:backgroundTint="@color/background_button"
+            android:layout_marginTop="30dp"
             android:layout_marginLeft="20dp"
-
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"/>
     </LinearLayout>
 
@@ -123,11 +110,10 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="Guardar i tornar"
-
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
-
+        android:backgroundTint="@color/background_button"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

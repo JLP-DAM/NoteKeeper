@@ -8,6 +8,7 @@ import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import com.google.android.material.badge.BadgeUtils
 
 class Configuration : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,6 +21,13 @@ class Configuration : AppCompatActivity() {
         goBackImageButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
 
+            startActivity(intent)
+        }
+
+        val btnSigin = findViewById<Button>(R.id.btn_sigin)
+
+        btnSigin.setOnClickListener {
+            val intent = Intent(this, iniciar_sesion::class.java)
             startActivity(intent)
         }
     }

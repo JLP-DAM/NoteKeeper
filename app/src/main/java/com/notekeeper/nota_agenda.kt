@@ -19,6 +19,13 @@ class nota_agenda : AppCompatActivity() {
             insets
         }
 
+        val btnClose = findViewById<ImageButton>(R.id.btn_close)
+
+        btnClose.setOnClickListener{
+            val intent = Intent(this, agenda::class.java)
+            startActivity(intent)
+        }
+
         val btnSave = findViewById<ImageButton>(R.id.btn_save)
 
         btnSave.setOnClickListener {

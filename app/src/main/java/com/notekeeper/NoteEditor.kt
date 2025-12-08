@@ -20,6 +20,7 @@ class NoteEditor : AppCompatActivity() {
         val configurationCardView = findViewById<CardView>(R.id.configurationCardView)
         val deleteNoteButton = findViewById<ImageButton>(R.id.delete_note)
 
+
         createNoteImageButton.setOnClickListener {
             val intent = Intent(this, this::class.java)
 
@@ -43,5 +44,7 @@ class NoteEditor : AppCompatActivity() {
 
             startActivity(intent)
         }
+
+
     }
 }

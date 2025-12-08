@@ -1,6 +1,9 @@
 package com.notekeeper
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,5 +19,13 @@ class iniciar_sesion : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val btnSignin = findViewById<Button>(R.id.loginButton)
+
+        btnSignin.setOnClickListener {
+            val intent = Intent(this, NoteShare::class.java)
+            startActivity(intent)
+        }
+
     }
 }

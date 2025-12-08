@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         shareButton.setOnClickListener {
-            val intent = Intent(this, NoteShare::class.java)
+            val intent = Intent(this, compartir::class.java)
             startActivity(intent)
         }
 

@@ -23,53 +23,5 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-
-        val menuCardView = findViewById<CardView>(R.id.menu)
-        val menuImageButton = findViewById<ImageButton>(R.id.menu_button)
-        val closeMenuButton = findViewById<ImageButton>(R.id.menu_close_button)
-        val configurationButton = findViewById<Button>(R.id.configuration)
-        val shareButton = findViewById<Button>(R.id.share)
-        val scheduleButton = findViewById<Button>(R.id.schedule)
-        val profileButton = findViewById<Button>(R.id.profile)
-        val createNoteImageButton = findViewById<ImageButton>(R.id.create_note)
-        val binImageButton = findViewById<ImageButton>(R.id.bin)
-
-        closeMenuButton.setOnClickListener {
-            menuCardView.setLayoutParams(ViewGroup.LayoutParams(dpToPx(-300f, applicationContext), applicationContext.resources.displayMetrics.heightPixels))
-        }
-
-        menuImageButton.setOnClickListener {
-            menuCardView.setLayoutParams(ViewGroup.LayoutParams(dpToPx(300f, applicationContext), applicationContext.resources.displayMetrics.heightPixels))
-        }
-
-        createNoteImageButton.setOnClickListener {
-            val intent = Intent(this, NoteEditor::class.java)
-            startActivity(intent)
-        }
-
-        configurationButton.setOnClickListener {
-            val intent = Intent(this, Configuration::class.java)
-            startActivity(intent)
-        }
-
-        shareButton.setOnClickListener {
-            val intent = Intent(this, compartir::class.java)
-            startActivity(intent)
-        }
-
-        binImageButton.setOnClickListener {
-            val intent = Intent(this, NoteBin::class.java)
-            startActivity(intent)
-        }
-
-        scheduleButton.setOnClickListener {
-            val intent = Intent(this, agenda::class.java)
-            startActivity(intent)
-        }
-
-        profileButton.setOnClickListener {
-            val intent = Intent(this, perfil::class.java)
-            startActivity(intent)
-        }
     }
 }

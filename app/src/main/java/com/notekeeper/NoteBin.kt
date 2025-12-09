@@ -14,41 +14,5 @@ class NoteBin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.note_bin)
-
-        val menuCardView = findViewById<CardView>(R.id.menu)
-        val menuImageButton = findViewById<ImageButton>(R.id.menu_button)
-        val closeMenuButton = findViewById<ImageButton>(R.id.menu_close_button)
-        val configurationButton = findViewById<Button>(R.id.configuration)
-        val shareButton = findViewById<Button>(R.id.share)
-        val scheduleButton = findViewById<Button>(R.id.schedule)
-        val profileButton = findViewById<Button>(R.id.profile)
-
-        scheduleButton.setOnClickListener {
-            val intent = Intent(this, agenda::class.java)
-            startActivity(intent)
-        }
-
-        profileButton.setOnClickListener {
-            val intent = Intent(this, perfil::class.java)
-            startActivity(intent)
-        }
-
-        closeMenuButton.setOnClickListener {
-            menuCardView.setLayoutParams(ViewGroup.LayoutParams(dpToPx(-300f, applicationContext), applicationContext.resources.displayMetrics.heightPixels))
-        }
-
-        menuImageButton.setOnClickListener {
-            menuCardView.setLayoutParams(ViewGroup.LayoutParams(dpToPx(300f, applicationContext), applicationContext.resources.displayMetrics.heightPixels))
-        }
-
-        configurationButton.setOnClickListener {
-            val intent = Intent(this, Configuration::class.java)
-            startActivity(intent)
-        }
-
-        shareButton.setOnClickListener {
-            val intent = Intent(this, NoteBin::class.java)
-            startActivity(intent)
-        }
     }
 }

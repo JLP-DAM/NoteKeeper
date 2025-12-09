@@ -16,20 +16,5 @@ class Configuration : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.configuration)
 
-        val goBackImageButton = findViewById<Button>(R.id.go_back)
-
-        goBackImageButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-
-            startActivity(intent)
-        }
-
-        val btnSigin = findViewById<Button>(R.id.btn_sigin)
-
-        btnSigin.setOnClickListener {
-            val intent = Intent(this, iniciar_sesion::class.java)
-            startActivity(intent)
-        }
-
     }
 }

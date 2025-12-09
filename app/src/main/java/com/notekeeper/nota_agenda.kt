@@ -13,24 +13,5 @@ class nota_agenda : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_nota_agenda)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
-
-        val btnClose = findViewById<ImageButton>(R.id.btn_close)
-
-        btnClose.setOnClickListener{
-            val intent = Intent(this, agenda::class.java)
-            startActivity(intent)
-        }
-
-        val btnSave = findViewById<ImageButton>(R.id.btn_save)
-
-        btnSave.setOnClickListener {
-            val intent = Intent(this, agenda::class.java)
-            startActivity(intent)
-        }
     }
 }

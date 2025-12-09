@@ -75,13 +75,24 @@
                 android:layout_height="40dp"
                 android:id="@+id/password"
                 android:background="@color/white"
-                android:layout_marginBottom="32dp"
+                android:layout_marginBottom="10dp"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 android:inputType="textPassword"
                 android:hint="Enter password"
                 android:textSize="16sp"
                 android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tvCreateAccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Create new account"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/white"
+                android:textAlignment="viewEnd"
+                android:textSize="18sp"/>
+
 
             <Button
                 android:layout_width="match_parent"

@@ -188,7 +188,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/menu"
-        android:layout_width="-300dp"
+        android:layout_width="300dp"
         android:layout_height="match_parent"
 
         android:backgroundTint="@color/background_component"

@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-
+        /*
         val menuCardView = findViewById<CardView>(R.id.menu)
         val menuImageButton = findViewById<ImageButton>(R.id.menu_button)
         val closeMenuButton = findViewById<ImageButton>(R.id.menu_close_button)
@@ -71,5 +71,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, perfil::class.java)
             startActivity(intent)
         }
+
+      */
     }
 }

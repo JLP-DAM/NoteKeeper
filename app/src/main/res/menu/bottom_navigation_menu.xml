@@ -14,19 +14,19 @@
         android:icon="@drawable/delete"/>
     <item
         android:id="@+id/create_note"
-        android:title="Perfil"
+        android:title="Añadir"
         android:iconTint="@color/white"
         android:icon="@drawable/add"/>
 
     <item
         android:id="@+id/profile"
-        android:title="Configuracio"
+        android:title="Perfil"
         android:iconTint="@color/white"
         android:icon="@drawable/user"/>
 
     <item
         android:id="@+id/settings"
-        android:title="Configuracio"
+        android:title="Configuració"
         android:iconTint="@color/white"
         android:icon="@drawable/setttings"/>
 </menu>

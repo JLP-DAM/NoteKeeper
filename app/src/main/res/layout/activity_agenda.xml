@@ -8,6 +8,21 @@
     android:background="@color/background_app"
     tools:context=".Agenda">
 
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/background_component"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:labelVisibilityMode="labeled"
+        app:itemHorizontalTranslationEnabled="true"
+        app:menu="@menu/bottom_navigation_menu"/>
+
     <TextView
         android:id="@+id/textAgenda"
         android:layout_width="wrap_content"

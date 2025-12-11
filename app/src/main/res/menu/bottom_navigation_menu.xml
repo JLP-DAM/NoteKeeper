@@ -5,18 +5,28 @@
         android:id="@+id/home"
         android:title="Home"
         android:enabled="true"
-        android:icon="@drawable/add"/>
+        android:iconTint="@color/white"
+        android:icon="@drawable/home"/>
     <item
         android:id="@+id/bin"
         android:title="Brossa"
+        android:iconTint="@color/white"
+        android:icon="@drawable/delete"/>
+    <item
+        android:id="@+id/create_note"
+        android:title="Perfil"
+        android:iconTint="@color/white"
         android:icon="@drawable/add"/>
+
     <item
         android:id="@+id/profile"
-        android:title="Perfil"
-        android:icon="@drawable/add"/>
+        android:title="Configuracio"
+        android:iconTint="@color/white"
+        android:icon="@drawable/user"/>
 
     <item
         android:id="@+id/settings"
         android:title="Configuracio"
-        android:icon="@drawable/add"/>
+        android:iconTint="@color/white"
+        android:icon="@drawable/setttings"/>
 </menu>

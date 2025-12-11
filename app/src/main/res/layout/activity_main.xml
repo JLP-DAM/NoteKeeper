@@ -11,29 +11,26 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
+        android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/background_component"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_navigation_menu"/>
 
 
     <ImageButton
         android:id="@+id/menu_button"
-
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:src="@drawable/baseline_menu_24"
-
+        android:src="@drawable/user"
+        android:backgroundTint="@color/white"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-
         android:layout_marginTop="16dp"
         android:layout_marginLeft="16dp"
-
-        android:background="@color/transparent"
         app:tint="@color/white"
         />
 
@@ -41,98 +38,71 @@
         android:id="@+id/create_note"
         android:layout_width="32dp"
         android:layout_height="32dp"
-
         android:src="@drawable/baseline_add_24"
-
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
-
         android:background="@color/transparent"
         app:tint="@color/white"
         />
 
     <ImageButton
         android:id="@+id/bin"
-
         android:layout_width="32dp"
         android:layout_height="32dp"
-
         android:src="@drawable/baseline_delete_24"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-
         android:background="@color/transparent"
-
         app:tint="@color/white"
         />
 
     <ImageView
         android:layout_width="200dp"
         android:layout_height="40dp"
-
         android:gravity="center"
-
         android:src="@drawable/notekeeper"
-
         android:layout_marginTop="40dp"
         android:layout_marginLeft="40dp"
-
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
 
     <EditText
         android:id="@+id/search"
-
         android:layout_width="300dp"
         android:layout_height="40dp"
-
         android:background="@drawable/roundstyle"
         android:backgroundTint="@color/white"
-
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-
         android:hint="   Busca..."
-
         android:layout_marginTop="80dp"
-
         />
 
     <ImageButton
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:src="@drawable/baseline_search_24"
-
         app:layout_constraintRight_toRightOf="@id/search"
         app:layout_constraintTop_toTopOf="@id/search"
-
         android:layout_marginRight="4dp"
         android:layout_marginTop="4dp"
-
         android:background="@color/transparent"
         app:tint="@color/black"
         />
 
     <androidx.recyclerview.widget.RecyclerView
         android:visibility="gone"
-
         android:layout_height="500dp"
         android:layout_width="300dp"
-
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-
         app:layout_constraintTop_toBottomOf="@+id/search"
-
         android:layout_marginTop="30dp">
 
     <!--
@@ -145,20 +115,15 @@
     <ScrollView
         android:layout_height="500dp"
         android:layout_width="300dp"
-
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-
         app:layout_constraintTop_toBottomOf="@+id/search"
-
         android:layout_marginTop="30dp">
 
         <LinearLayout
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-
             android:orientation="vertical"
-
             android:layout_marginTop="10dp">
 
 
@@ -188,24 +153,14 @@
                     />
 
                 <ImageButton
-
-
-
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-
                     android:layout_marginLeft="268dp"
-
                     android:background="@color/transparent"
-
                     android:src="@drawable/baseline_more_horiz_24"
-
-
                     app:tint="@color/black" />
-
 
             </androidx.cardview.widget.CardView>
 
@@ -216,9 +171,7 @@
         android:id="@+id/menu"
         android:layout_width="-300dp"
         android:layout_height="match_parent"
-
         android:backgroundTint="@color/background_component"
-
         app:layout_constraintLeft_toLeftOf="parent">
 
         <LinearLayout
@@ -228,17 +181,13 @@
 
             <ImageButton
                 android:id="@+id/menu_close_button"
-
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:src="@drawable/baseline_menu_24"
-
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-
                 android:layout_marginTop="16dp"
                 android:layout_marginLeft="16dp"
-
                 android:background="@color/transparent"
                 app:tint="@color/white"
                 />
@@ -247,81 +196,54 @@
                 android:layout_width="240dp"
                 android:layout_height="120dp"
                 android:layout_marginLeft="20dp"
-
                 android:layout_marginTop="16dp"
                 android:background="@color/transparent"
-
                 android:src="@drawable/notekeeper"
                 app:layout_constraintLeft_toLeftOf="parent"
-
                 app:layout_constraintTop_toTopOf="parent"
                 />
 
             <Button
                 android:id="@+id/schedule"
-
                 android:layout_width="match_parent"
-
                 android:textAlignment="textStart"
-
                 android:layout_height="45dp"
-
                 android:text="· Agenda"
                 android:textSize="18dp"
-
                 android:textColor="@color/white"
-
                 android:background="@color/transparent"
                 />
 
             <Button
                 android:id="@+id/share"
-
                 android:layout_width="match_parent"
-
                 android:textAlignment="textStart"
-
                 android:layout_height="45dp"
-
                 android:text="· Compartir"
                 android:textSize="18dp"
-
                 android:textColor="@color/white"
-
                 android:background="@color/transparent"
                 />
 
             <Button
                 android:id="@+id/profile"
-
                 android:layout_width="match_parent"
-
                 android:textAlignment="textStart"
-
                 android:layout_height="45dp"
-
                 android:text="· Perfil"
                 android:textSize="18dp"
-
                 android:textColor="@color/white"
-
                 android:background="@color/transparent"
                 />
 
             <Button
                 android:id="@+id/configuration"
-
                 android:layout_width="match_parent"
-
                 android:textAlignment="textStart"
-
                 android:layout_height="45dp"
-
                 android:text="· Configuració"
                 android:textSize="18dp"
-
                 android:textColor="@color/white"
-
                 android:background="@color/transparent"
                 />
         </LinearLayout>

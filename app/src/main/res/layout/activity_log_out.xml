@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_app"
-    tools:context=".cerrar_sesion">
+    tools:context=".LogOut">
 
     <ImageButton
         android:id="@+id/btn_menu"
@@ -22,6 +22,9 @@
 
 
 
+
+
+
     <ImageView
         android:id="@+id/user_icon"
         android:layout_width="120dp"
@@ -31,6 +34,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_menu" />
+
 
     <TextView
         android:id="@+id/user_name"
@@ -45,7 +49,9 @@
         app:layout_constraintTop_toBottomOf="@+id/user_icon"
         android:layout_marginTop="16dp" />
 
+
     <Button
+
 
         android:id="@+id/btn_login"
         android:layout_width="wrap_content"
@@ -58,5 +64,6 @@
         android:text="Log in"
         android:textSize="18sp"
         />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

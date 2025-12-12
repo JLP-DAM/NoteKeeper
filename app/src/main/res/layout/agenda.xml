@@ -23,6 +23,18 @@
         app:itemHorizontalTranslationEnabled="true"
         app:menu="@menu/bottom_navigation_menu"/>
 
+    <ImageButton
+        android:id="@+id/create_note"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/add"
+        android:tint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        />
+
     <TextView
         android:id="@+id/textAgenda"
         android:layout_width="wrap_content"
@@ -31,7 +43,7 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/create_note"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="30dp" />
@@ -48,5 +60,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

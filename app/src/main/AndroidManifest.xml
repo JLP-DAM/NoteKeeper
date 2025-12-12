@@ -12,6 +12,39 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NoteKeeper">
         <activity
+            android:name=".LogOut"
+            android:exported="false" />
+        <activity
+            android:name=".ChangePassword"
+            android:exported="false" />
+        <activity
+            android:name=".NoteShare"
+            android:exported="false" />
+        <activity
+            android:name=".NoteAgenda"
+            android:exported="false" />
+        <activity
+            android:name=".NoteEditor"
+            android:exported="false" />
+        <activity
+            android:name=".Share"
+            android:exported="false" />
+        <activity
+            android:name=".Bin"
+            android:exported="false" />
+        <activity
+            android:name=".SignIn"
+            android:exported="false" />
+        <activity
+            android:name=".LogIn"
+            android:exported="false" />
+        <activity
+            android:name=".Agenda"
+            android:exported="false" />
+        <activity
+            android:name=".Profile"
+            android:exported="false" />
+        <activity
             android:name=".cerrar_sesion"
             android:exported="false" />
         <activity
@@ -29,7 +62,6 @@
         <activity
             android:name=".nota_agenda"
             android:exported="false" />
-
         <activity
             android:name=".compartir"
             android:exported="false"
@@ -43,7 +75,6 @@
         <activity
             android:name=".registro"
             android:exported="false" />
-
         <activity
             android:name=".papelera"
             android:exported="false" />
@@ -56,26 +87,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".NoteEditor"
-            android:exported="true">
-        </activity>
-
         <activity
             android:name=".Configuration"
-            android:exported="true">
-        </activity>
-
-        <activity
-            android:name=".NoteShare"
-            android:exported="true">
-        </activity>
-
+            android:exported="true" />
         <activity
             android:name=".NoteBin"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>

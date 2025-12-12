@@ -97,7 +97,7 @@
                 android:id="@+id/loginButton"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:backgroundTint="@color/background_button"
+                android:background="@color/background_button"
                 android:textColor="@color/white"
                 app:cornerRadius="12dp"/>
 

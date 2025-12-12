@@ -38,44 +38,44 @@
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_marginTop="30dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="35dp"
             android:layout_marginEnd="20dp"/>
 
         <Button
-            android:layout_width="100dp"
-            android:layout_height=50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/btn_nShare"
             android:text="Compartir"
             android:textSize="18dp"
             android:textColor="@color/white"
             android:background="@color/background_button"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="35dp"
             android:layout_marginEnd="20dp"/>
 
         <Button
-            android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/btn_nAgenda"
             android:text="Agenda"
             android:textColor="@color/white"
             android:textSize="20dp"
             android:background="@color/background_button"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="35dp"
             android:layout_marginEnd="20dp"/>
 
         <Button
-            android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/btn_nNormal"
             android:text="Normal"
             android:textColor="@color/white"
             android:textSize="20dp"
             android:background="@color/background_button"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="35dp"
             android:layout_marginEnd="20dp"/>
 
     </LinearLayout>

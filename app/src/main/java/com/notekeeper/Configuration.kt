@@ -27,7 +27,7 @@ class Configuration : AppCompatActivity() {
         val btnSigin = findViewById<Button>(R.id.btn_sigin)
 
         btnSigin.setOnClickListener {
-            val intent = Intent(this, iniciar_sesion::class.java)
+            val intent = Intent(this, LogIn::class.java)
             startActivity(intent)
         }
 

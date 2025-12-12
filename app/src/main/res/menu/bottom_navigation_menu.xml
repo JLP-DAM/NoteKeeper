@@ -28,5 +28,5 @@
         android:id="@+id/settings"
         android:title="Configuració"
         android:iconTint="@color/white"
-        android:icon="@drawable/setttings"/>
+        android:icon="@drawable/settings"/>
 </menu>

@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NoteKeeper">
         <activity
-            android:name=".LogOut"
+            android:name=".LoggedOut"
             android:exported="false" />
         <activity
             android:name=".ChangePassword"
@@ -25,9 +25,6 @@
             android:exported="false" />
         <activity
             android:name=".NoteEditor"
-            android:exported="false" />
-        <activity
-            android:name=".Share"
             android:exported="false" />
         <activity
             android:name=".Bin"

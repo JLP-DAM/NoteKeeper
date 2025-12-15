@@ -12,10 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NoteKeeper">
         <activity
-            android:name=".Share"
+            android:name=".AddNote"
             android:exported="false" />
         <activity
-            android:name=".AddNote"
+            android:name=".Share"
             android:exported="false" />
         <activity
             android:name=".LoggedOut"

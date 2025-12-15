@@ -11,7 +11,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="55dp"
-        android:src="@drawable/notekeeper"
+        android:src="@drawable/noteKeeper"
         android:layout_marginBottom="20dp"
         android:id="@+id/imageLogo"
         app:layout_constraintTop_toTopOf="parent"
@@ -70,7 +70,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Password"
+                android:text="Contrasenya"
                 android:textSize="16sp"
                 android:textColor="@color/white"
                 android:layout_marginBottom="8dp"/>
@@ -93,11 +93,11 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:text="Log In"
+                android:text="Inicia sessió"
                 android:id="@+id/loginButton"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:background="@color/background_button"
+                android:backgroundTint="@color/background_button"
                 android:textColor="@color/white"
                 app:cornerRadius="12dp"/>
 

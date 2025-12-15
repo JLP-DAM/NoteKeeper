@@ -14,16 +14,22 @@ class AddNote : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.add_note)
 
-        val BtnShare = findViewById<Button>(R.id.btn_nShare)
-        val BtnNormal = findViewById<Button>(R.id.btn_nNormal)
+        val btnNormal = findViewById<Button>(R.id.btn_nNormal)
+        val btnShare = findViewById<Button>(R.id.btn_nShare)
+        val btnAgenda = findViewById<Button>(R.id.btn_nAgenda)
 
-        BtnShare.setOnClickListener {
+
+        btnNormal.setOnClickListener {
+            val intent = Intent(this, AddNote::class.java)
+            startActivity(intent)
+        }
+        btnShare.setOnClickListener {
             val intent = Intent(this, Share::class.java)
             startActivity(intent)
         }
-
-        BtnNormal.setOnClickListener {
-            val intent : Intent(this,note)
+        btnAgenda.setOnClickListener {
+            val intent = Intent(this, Agenda::class.java)
+            startActivity(intent)
         }
     }
 }

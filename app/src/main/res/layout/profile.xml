@@ -94,10 +94,12 @@
                 android:layout_marginBottom="8dp">
 
 
-                <View
-                    android:layout_width="24dp"
-                    android:layout_height="24dp" />
-
+                <ImageButton
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/edit_profile"
+                    android:background="@color/transparent"
+                    />
 
                 <TextView
                     android:layout_width="0dp"
@@ -107,9 +109,6 @@
                     android:textSize="16sp"
                     android:textColor="@color/black"
                     android:layout_marginStart="16dp" />
-
-
-
 
             </LinearLayout>
 
@@ -123,9 +122,11 @@
                 android:layout_marginBottom="8dp">
 
 
-                <View
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                <ImageButton
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/password"
+                    android:background="@color/transparent"
                     />
 
 
@@ -151,10 +152,12 @@
                 android:layout_marginBottom="8dp">
 
 
-                <View
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:tint="@color/black" />
+                <ImageButton
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/notification"
+                    android:background="@color/transparent"
+                    />
 
 
                 <TextView
@@ -184,9 +187,13 @@
                 android:paddingVertical="12dp">
 
 
-                <View
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"/>
+                <ImageButton
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/close"
+                    android:tint="@color/red"
+                    android:background="@color/transparent"
+                    />
 
 
                 <TextView

@@ -7,70 +7,121 @@
     android:background="@color/background_app"
     tools:context=".Home">
 
-    <!-- ImageView para Folders -->
-    <ImageView
-        android:id="@+id/imageViewFolders"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/folders_item"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/ic_folders" />
-
-    <!-- ImageView para Search -->
-    <ImageView
-        android:id="@+id/imageViewSearch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewFolders"
-        tools:src="@drawable/ic_search" />
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <!-- ImageView para Shared -->
-    <ImageView
-        android:id="@+id/imageViewShared"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewSearch"
-        tools:src="@drawable/ic_shared" />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/folder"
+            android:background="@color/transparent" />
 
-    <!-- ImageView para iCloud -->
-    <ImageView
-        android:id="@+id/imageViewICloud"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewShared"
-        tools:src="@drawable/ic_icloud" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Notes"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="16dp" />
 
-    <!-- ImageView para Notes -->
-    <ImageView
-        android:id="@+id/imageViewNotes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewICloud"
-        tools:src="@drawable/ic_notes" />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_next"
+            android:background="@color/transparent" />
 
-    <!-- ImageView para Recently Deleted -->
-    <ImageView
-        android:id="@+id/imageViewRecentlyDeleted"
-        android:layout_width="wrap_content"
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/search_item"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/folders_item"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewNotes"
-        tools:src="@drawable/delete" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_agenda"
+            android:background="@color/transparent" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Agenda"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="16dp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_next"
+            android:background="@color/transparent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/shared_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/search_item"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_share"
+            android:background="@color/transparent" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Shared"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="16dp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_next"
+            android:background="@color/transparent" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

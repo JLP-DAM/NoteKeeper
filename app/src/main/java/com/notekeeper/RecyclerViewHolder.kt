@@ -10,13 +10,12 @@ class RecyclerViewHolder(
     private val onItemClick: (NoteListItem) -> Unit
 ) : RecyclerView.ViewHolder(itemView) {
 
-    private val tvTitle: TextView = itemView.findViewById(R.id.tvTitle)
-    private val tvSubtitle: TextView = itemView.findViewById(R.id.tvSubtitle)
+    private val textViewTitle: TextView = itemView.findViewById(R.id.tvTitle)
+    private val textViewSubtitle: TextView = itemView.findViewById(R.id.tvSubtitle)
 
     fun bind(item: NoteListItem) {
-        Log.d(item.name, item.text)
-        tvTitle.text = item.name
-        tvSubtitle.text = item.text
+        textViewTitle.text = item.name
+        textViewSubtitle.text = item.text
 
         itemView.setOnClickListener {
             onItemClick(item)

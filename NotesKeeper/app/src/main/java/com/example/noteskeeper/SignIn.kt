@@ -21,7 +21,7 @@ class SignIn : Fragment() {
         btnSignIn.setOnClickListener {
             //Permite passar de un fragment a otro
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainer, Home())
+                .replace(R.id.fragmentContainer, Profile())
                 .addToBackStack(null)
                 .commit()
         }

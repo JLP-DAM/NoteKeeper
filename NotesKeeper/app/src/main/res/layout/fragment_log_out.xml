@@ -35,15 +35,18 @@
     <Button
         android:id="@+id/btnInciarSession"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="52dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
         android:text="Inicar session"
+        android:textStyle="bold"
+        android:textSize="16sp"
         android:textColor="@color/white"
         android:backgroundTint="@color/background_button"
         app:layout_constraintTop_toBottomOf="@+id/userName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="Iniciar Session"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

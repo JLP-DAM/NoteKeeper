@@ -1,10 +1,12 @@
 package com.example.noteskeeper
 
 import android.os.Bundle
+import android.text.LoginFilter
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 
 class Settings : Fragment() {
 
@@ -13,6 +15,18 @@ class Settings : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false)
+        val view = inflater.inflate(R.layout.fragment_settings, container, false)
+
+        val btnSignIn = view.findViewById<Button>(R.id.btnSignIn)
+
+        btnSignIn.setOnClickListener {
+            //Permite passar de un fragment a otro
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, LogIn())
+                .addToBackStack(null)
+                .commit()
+        }
+
+        return view
     }
 }

@@ -93,7 +93,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:text="Inicia sessió"
-                android:id="@+id/loginButton"
+                android:id="@+id/btnLogIn"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:backgroundTint="@color/background_button"
@@ -103,9 +103,22 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:text="No tienes cuenta registrate"
+                android:text="Crear un compte"
                 android:textColor="@color/white"
+                android:textSize="16dp"
                 android:layout_marginTop="10dp"
+                />
+
+            <Button
+                android:id="@+id/btnInciarSession"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="Registrar-se"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/background_button"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                app:cornerRadius="12dp"
                 />
 
         </LinearLayout>

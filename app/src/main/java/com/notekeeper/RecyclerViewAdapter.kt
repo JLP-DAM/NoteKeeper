@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
 class RecyclerViewAdapter(
-    private val items: List<NoteListItem>,
+    private var items: List<NoteListItem>,
     private val onItemClick: (NoteListItem) -> Unit
 ) : RecyclerView.Adapter<RecyclerViewHolder>() {
 
@@ -20,5 +20,10 @@ class RecyclerViewAdapter(
     override fun onBindViewHolder(holder: RecyclerViewHolder, position: Int) {
         val item = items[position]
         holder.bind(item)
+    }
+
+    fun updateList(newList: List<NoteListItem>) {
+        items = newList
+        notifyDataSetChanged()
     }
 }

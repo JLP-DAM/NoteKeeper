@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
@@ -12,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.children
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import android.widget.PopupMenu
+import android.widget.ImageButton
 
 
 class MainActivity : AppCompatActivity() {
@@ -51,24 +55,76 @@ class MainActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 val searched = s.toString().lowercase()
 
-                if (searched.isEmpty()) {return;}
-
-                for (note in recyclerView.children) {
-                    val name = note.findViewById<TextView>(R.id.tvTitle).text.toString().lowercase()
-
-                    Log.d("SEARCHED", searched + ", " + name + ", " + name.substring(0, (searched.length - 1).coerceAtLeast(1)))
-
-
-
-                    if (searched == name.substring(0, (searched.length).coerceIn(1, name.length))) {
-                        note.visibility = View.VISIBLE;
-                    } else {
-                        note.visibility = View.GONE;
-                    }
-                }
+                applyFilter(null, searched)
             }
 
             override fun afterTextChanged(s: Editable?) {}
         })
+
+        findViewById<ImageButton>(R.id.filter).setOnClickListener {
+            showCategoryPopupMenu(findViewById(R.id.filter))
+        }
+    }
+
+    private fun showCategoryPopupMenu(view: View) {
+        val popup = PopupMenu(this, view)
+
+        popup.menuInflater.inflate(R.menu.note_filter, popup.menu)
+
+        popup.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.category_all -> {
+                    applyFilter("All", null)
+                    true
+                }
+
+                R.id.category_normal -> {
+                    applyFilter("Normal", null)
+                    true
+                }
+
+                R.id.category_agenda -> {
+                    applyFilter("Agenda", null)
+                    true
+                }
+
+                R.id.category_shared -> {
+                    applyFilter("Shared", null)
+                    true
+                }
+
+                else -> false
+            }
+        }
+
+        popup.show()
+    }
+
+    var searchedCategory = "All"
+    var searchedName = ""
+    private fun applyFilter(category: String?, nameFilter: String?) {
+        if (category != null) {
+            Toast.makeText(this, "Filtrat per: $category", Toast.LENGTH_SHORT).show()
+
+            searchedCategory = category
+        }
+
+        if (nameFilter != null) {
+            searchedName = nameFilter
+        }
+
+        var notes: ArrayList<NoteListItem> = ArrayList()
+
+        for (note in TestNotes.items) {
+            if (note.type != searchedCategory && searchedCategory != "All") {continue}
+
+            val name = note.name.lowercase()
+
+            if ((!searchedName.isEmpty()) && (searchedName != name.substring(0, (searchedName.length).coerceIn(1, name.length)))) {continue}
+
+            notes.add(note)
+        }
+
+        recyclerViewAdapter.updateList(notes)
     }
 }

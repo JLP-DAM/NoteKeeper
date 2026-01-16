@@ -1,127 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_app"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Home">
 
-    <LinearLayout
-        android:id="@+id/folders_item"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:background="@color/white"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp"
-        android:layout_marginTop="8dp"
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:src="@drawable/notekeeper"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="40dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="@drawable/roundstyle"
+        android:backgroundTint="@color/white"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:hint="   Busca..."
+        android:layout_marginTop="80dp"/>
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/folder"
-            android:background="@color/transparent" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Notes"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            android:layout_marginStart="16dp" />
-
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_next"
-            android:background="@color/transparent" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/search_item"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:background="@color/white"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp"
+    <ImageButton
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/baseline_search_24"
+        app:layout_constraintRight_toRightOf="@id/search"
+        app:layout_constraintTop_toTopOf="@id/search"
+        android:layout_marginRight="4dp"
         android:layout_marginTop="4dp"
-        app:layout_constraintTop_toBottomOf="@+id/folders_item"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:background="@color/transparent"
+        app:tint="@color/black"/>
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_agenda"
-            android:background="@color/transparent" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:visibility="gone"
+        android:layout_height="500dp"
+        android:layout_width="300dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search"
+        android:layout_marginTop="30dp">
+    </androidx.recyclerview.widget.RecyclerView>
 
-        <TextView
-            android:layout_width="0dp"
+    <ScrollView
+        android:layout_height="500dp"
+        android:layout_width="300dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search"
+        android:layout_marginTop="30dp">
+
+        <LinearLayout
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Agenda"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            android:layout_marginStart="16dp" />
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_next"
-            android:background="@color/transparent" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="10dp">
 
-    </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:textSize="16dp"
+                    android:text="Nom de la nota (PLACEHOLDER)"/>
 
-    <LinearLayout
-        android:id="@+id/shared_item"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:background="@color/white"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintTop_toBottomOf="@+id/search_item"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:textSize="13dp"
+                    android:text="Text de la nota, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_share"
-            android:background="@color/transparent" />
+                <ImageButton
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="268dp"
+                    android:background="@color/transparent"
+                    android:src="@drawable/baseline_more_horiz_24"
+                    app:tint="@color/black"/>
+            </androidx.cardview.widget.CardView>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Shared"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            android:layout_marginStart="16dp" />
-
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_next"
-            android:background="@color/transparent" />
-
-    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

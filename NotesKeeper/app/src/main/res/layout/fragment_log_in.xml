@@ -100,7 +100,17 @@
                 android:textColor="@color/white"
                 app:cornerRadius="12dp"/>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="No tienes cuenta registrate"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"
+                />
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

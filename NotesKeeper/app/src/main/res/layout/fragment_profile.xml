@@ -15,7 +15,9 @@
         android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
 
     <TextView
         android:id="@+id/user_name"
@@ -30,6 +32,7 @@
         app:layout_constraintTop_toBottomOf="@+id/user_icon"
         android:layout_marginTop="16dp" />
 
+
     <TextView
         android:id="@+id/user_email"
         android:layout_width="wrap_content"
@@ -42,9 +45,9 @@
         app:layout_constraintTop_toBottomOf="@+id/user_name"
         android:layout_marginTop="4dp" />
 
+
     <androidx.cardview.widget.CardView
         android:id="@+id/profile_card"
-
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -70,9 +73,13 @@
                 android:gravity="center_vertical"
                 android:layout_marginBottom="8dp">
 
-                <View
-                    android:layout_width="24dp"
-                    android:layout_height="24dp" />
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/edit_profile"
+                    android:background="@color/transparent"
+                    android:contentDescription="Edita perfil"
+                    />
 
                 <TextView
                     android:layout_width="0dp"
@@ -83,8 +90,8 @@
                     android:textColor="@color/black"
                     android:layout_marginStart="16dp" />
 
-
             </LinearLayout>
+
 
             <LinearLayout
                 android:id="@+id/cambiar_password"
@@ -94,9 +101,13 @@
                 android:gravity="center_vertical"
                 android:layout_marginBottom="8dp">
 
-                <View
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                <ImageButton
+                    android:id="@+id/icChangePassword"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/password"
+                    android:background="@color/transparent"
+                    android:contentDescription="Canviar contrasenya"
                     />
 
                 <TextView
@@ -110,6 +121,7 @@
 
             </LinearLayout>
 
+
             <LinearLayout
                 android:id="@+id/notificaciones"
                 android:layout_width="match_parent"
@@ -118,10 +130,14 @@
                 android:gravity="center_vertical"
                 android:layout_marginBottom="8dp">
 
-                <View
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:tint="@color/black" />
+                <ImageButton
+                    android:id="@+id/icNotification"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/notification"
+                    android:background="@color/transparent"
+                    android:contentDescription="Notificaciones"
+                    />
 
                 <TextView
                     android:layout_width="0dp"
@@ -139,7 +155,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/cerrar_sesion"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:orientation="horizontal"
@@ -147,10 +162,14 @@
                 android:background="?attr/selectableItemBackground"
                 android:paddingVertical="12dp">
 
-                <View
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"/>
-
+                <ImageButton
+                    android:id="@+id/icSalir"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/close"
+                    android:background="@color/transparent"
+                    android:contentDescription="Tancar sessio"
+                    />
 
                 <TextView
                     android:layout_width="0dp"

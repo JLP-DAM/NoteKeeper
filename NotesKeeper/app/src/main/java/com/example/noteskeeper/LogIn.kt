@@ -5,40 +5,33 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
-import android.widget.Toast
-import androidx.fragment.app.FragmentContainer
+import android.widget.Button
 
-class Profile : Fragment() {
+class LogIn : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_profile, container, false)
+        // Inflate the layout for this fragment
+        val view =  inflater.inflate(R.layout.fragment_log_in, container, false)
 
-        //Tenemos que indentificar el ImageButton por su ID
-        val icChangePassword = view.findViewById<ImageButton>(R.id.icChangePassword)
+        val btnLogIn = view.findViewById<Button>(R.id.btnLogIn)
 
-        val icLogOut = view.findViewById<ImageButton>(R.id.icSalir)
-
-        //Cunado lo des clic
-        icLogOut.setOnClickListener {
-
+        btnLogIn.setOnClickListener {
             //Permite passar de un fragment a otro
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainer, LogOut())
+                .replace(R.id.fragmentContainer, Profile())
                 .addToBackStack(null)
                 .commit()
         }
 
+        val btnInciarSession = view.findViewById<Button>(R.id.btnInciarSession)
 
-        //Cunado lo des clic
-        icChangePassword.setOnClickListener {
-
+        btnInciarSession.setOnClickListener {
             //Permite passar de un fragment a otro
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainer, ChangePassword())
+                .replace(R.id.fragmentContainer, SignIn())
                 .addToBackStack(null)
                 .commit()
         }

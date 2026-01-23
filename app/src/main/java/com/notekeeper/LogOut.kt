@@ -7,31 +7,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 
-class LogIn : Fragment() {
+class LogOut : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view =  inflater.inflate(R.layout.fragment_log_in, container, false)
-
-        val btnLogIn = view.findViewById<Button>(R.id.btnLogIn)
-
-        btnLogIn.setOnClickListener {
-            //Permite passar de un fragment a otro
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainer, Profile())
-                .addToBackStack(null)
-                .commit()
-        }
+        val view =  inflater.inflate(R.layout.fragment_log_out, container, false)
 
         val btnInciarSession = view.findViewById<Button>(R.id.btnInciarSession)
 
         btnInciarSession.setOnClickListener {
             //Permite passar de un fragment a otro
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainer, SignIn())
+                .replace(R.id.fragmentContainer, LogIn())
                 .addToBackStack(null)
                 .commit()
         }

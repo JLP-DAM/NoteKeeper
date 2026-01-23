@@ -1,130 +1,61 @@
 package com.notekeeper
 
+import android.content.Intent
+import android.net.wifi.hotspot2.pps.HomeSp
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
-import android.widget.TextView
+import android.widget.ImageButton
+import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.children
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import android.widget.PopupMenu
-import android.widget.ImageButton
-
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var recyclerViewAdapter: RecyclerViewAdapter
-
-    private lateinit var search: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.main)
-        BottomNavigationMenu().createMenu(findViewById(R.id.bottomNavigationView))
 
-        recyclerView = findViewById(R.id.notes)
-        search = findViewById(R.id.search)
+        // Splash Screen
+        val splashScreen = installSplashScreen()
+        splashScreen.setKeepOnScreenCondition { false }
 
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        // Cargar layout
+        setContentView(R.layout.activity_main)
 
-        val items = TestNotes.items
+        val homeFragment = Home()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainer, homeFragment)
+            .commit()
 
-        recyclerViewAdapter = RecyclerViewAdapter(
-            items = items,
-            onItemClick = { item ->
-                Toast.makeText(
-                    this,
-                    "Has obert la nota: ${item.name}",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-        )
 
-        recyclerView.adapter = recyclerViewAdapter
+        val bottomNav: BottomNavigationView = findViewById(R.id.bottomNav)
 
-        search.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                val searched = s.toString().lowercase()
-
-                applyFilter(null, searched)
+        // Bottom Navigation
+        bottomNav.setOnItemSelectedListener { item ->
+            val selectedFragment: Fragment? = when (item.itemId) {
+                R.id.nav_home -> Home()
+                R.id.nav_add -> Add()
+                R.id.nav_settings-> Settings()
+                R.id.nav_bin -> Bin()
+                R.id.nav_profile -> LogOut()
+                else -> null
             }
 
-            override fun afterTextChanged(s: Editable?) {}
-        })
-
-        findViewById<ImageButton>(R.id.filter).setOnClickListener {
-            showCategoryPopupMenu(findViewById(R.id.filter))
+            if (selectedFragment != null) {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragmentContainer, selectedFragment)
+                    .commit()
+            }
+            true
         }
     }
 
-    private fun showCategoryPopupMenu(view: View) {
-        val popup = PopupMenu(this, view)
-
-        popup.menuInflater.inflate(R.menu.note_filter, popup.menu)
-
-        popup.setOnMenuItemClickListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.category_all -> {
-                    applyFilter("All", null)
-                    true
-                }
-
-                R.id.category_normal -> {
-                    applyFilter("Normal", null)
-                    true
-                }
-
-                R.id.category_agenda -> {
-                    applyFilter("Agenda", null)
-                    true
-                }
-
-                R.id.category_shared -> {
-                    applyFilter("Shared", null)
-                    true
-                }
-
-                else -> false
-            }
-        }
-
-        popup.show()
-    }
-
-    var searchedCategory = "All"
-    var searchedName = ""
-    private fun applyFilter(category: String?, nameFilter: String?) {
-        if (category != null) {
-            Toast.makeText(this, "Filtrat per: $category", Toast.LENGTH_SHORT).show()
-
-            searchedCategory = category
-        }
-
-        if (nameFilter != null) {
-            searchedName = nameFilter
-        }
-
-        var notes: ArrayList<NoteListItem> = ArrayList()
-
-        for (note in TestNotes.items) {
-            if (note.type != searchedCategory && searchedCategory != "All") {continue}
-
-            val name = note.name.lowercase()
-
-            if ((!searchedName.isEmpty()) && (searchedName != name.substring(0, (searchedName.length).coerceIn(1, name.length)))) {continue}
-
-            notes.add(note)
-        }
-
-        recyclerViewAdapter.updateList(notes)
-    }
 }
+

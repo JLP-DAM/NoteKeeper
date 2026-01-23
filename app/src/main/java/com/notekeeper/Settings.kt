@@ -1,29 +1,32 @@
 package com.notekeeper
 
 import android.os.Bundle
+import android.text.LoginFilter
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 
-class ChangePassword : Fragment() {
+class Settings : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view =  inflater.inflate(R.layout.fragment_change_password, container, false)
+        val view = inflater.inflate(R.layout.fragment_settings, container, false)
 
-        val btnChangePassword = view.findViewById<Button>(R.id.btnCambiar)
+        val btnSignIn = view.findViewById<Button>(R.id.btnSignIn)
 
-        btnChangePassword.setOnClickListener {
+        btnSignIn.setOnClickListener {
+            //Permite passar de un fragment a otro
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainer, Profile())
+                .replace(R.id.fragmentContainer, LogIn())
                 .addToBackStack(null)
                 .commit()
         }
+
         return view
     }
 }

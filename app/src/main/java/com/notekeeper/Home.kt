@@ -15,7 +15,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class Bin : Fragment() {
+class Home : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var recyclerViewAdapter: RecyclerViewAdapter
     private lateinit var search: EditText
@@ -24,9 +24,9 @@ class Bin : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val BinFragmentView = inflater.inflate(R.layout.fragment_bin, container, false)
+        val homeFragmentView = inflater.inflate(R.layout.fragment_home, container, false)
 
-        val currentView = BinFragmentView
+        val currentView = homeFragmentView
 
         if (currentView != null) {
             recyclerView = currentView.findViewById<RecyclerView>(R.id.notes)
@@ -35,29 +35,31 @@ class Bin : Fragment() {
 
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        val items = TestBinNotes.items
+        val items = TestNotes.items
 
+        // Creem l'adapter i preparem el onItemClick que en aquest cas obriria la nota
+        // (de moment sol obre el fragment de "Add" per crear una nota, ja que de moment no hi ha
+        // el "NoteEditor" del prototip)
         recyclerViewAdapter = RecyclerViewAdapter(
             items = items,
             onItemClick = { item ->
                 Toast.makeText(
                     context,
-                    "Has borrat la nota: ${item.name}",
+                    "Has obert la nota: ${item.name} (Editor de notes en progrés...)",
                     Toast.LENGTH_SHORT
                 ).show()
 
-                val filteredNotes = TestBinNotes.items.filter{it.name != item.name}
+                val addFragment = Add()
 
-                TestBinNotes.items = TestBinNotes.items.filter{it.name != item.name}
-
-                recyclerViewAdapter.updateList(filteredNotes)
-
-                applyFilter(null, null)
+                activity?.supportFragmentManager?.beginTransaction()
+                    ?.replace(R.id.fragmentContainer, addFragment)
+                    ?.commit()
             }
         )
 
         recyclerView.adapter = recyclerViewAdapter
 
+        // Escoltem canvis a la cerca per aplicar el filtre
         search.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
@@ -70,15 +72,17 @@ class Bin : Fragment() {
             override fun afterTextChanged(s: Editable?) {}
         })
 
+        // Escoltem que el botó de filtre es cliqui per mostrar el popup menu de cerca
         if (currentView != null) {
             currentView.findViewById<ImageButton>(R.id.filter).setOnClickListener {
                 showCategoryPopupMenu(currentView.findViewById(R.id.filter))
             }
         }
 
-        return BinFragmentView
+        return homeFragmentView
     }
 
+    // Mostrem el menu de popup per filtrar per categories
     private fun showCategoryPopupMenu(view: View) {
         val popup = PopupMenu(context, view)
 
@@ -113,6 +117,10 @@ class Bin : Fragment() {
         popup.show()
     }
 
+    /*
+        Aqui tenim el filtre que segons la categoria buscada i el text que s'està escrivint ara
+        mateix actualitza la llista base per mostrar les notes (items) que pertanyen a la llista
+    */
     var searchedCategory = "All"
     var searchedName = ""
     private fun applyFilter(category: String?, nameFilter: String?) {
@@ -128,7 +136,7 @@ class Bin : Fragment() {
 
         var notes: ArrayList<NoteListItem> = ArrayList()
 
-        for (note in TestBinNotes.items) {
+        for (note in TestNotes.items) {
             if (note.type != searchedCategory && searchedCategory != "All") {continue}
 
             val name = note.name.lowercase()

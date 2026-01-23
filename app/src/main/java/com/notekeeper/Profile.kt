@@ -1,20 +1,48 @@
 package com.notekeeper
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.Toast
+import androidx.fragment.app.FragmentContainer
 
-class Profile : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.profile)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+class Profile : Fragment() {
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_profile, container, false)
+
+        //Tenemos que indentificar el ImageButton por su ID
+        val icChangePassword = view.findViewById<ImageButton>(R.id.icChangePassword)
+
+        val icLogOut = view.findViewById<ImageButton>(R.id.icSalir)
+
+        //Cunado lo des clic
+        icLogOut.setOnClickListener {
+
+            //Permite passar de un fragment a otro
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, LogOut())
+                .addToBackStack(null)
+                .commit()
         }
+
+
+        //Cunado lo des clic
+        icChangePassword.setOnClickListener {
+
+            //Permite passar de un fragment a otro
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, ChangePassword())
+                .addToBackStack(null)
+                .commit()
+        }
+
+        return view
     }
 }

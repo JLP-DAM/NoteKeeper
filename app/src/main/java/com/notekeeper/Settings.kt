@@ -1,7 +1,6 @@
 package com.notekeeper
 
 import android.os.Bundle
-import android.text.LoginFilter
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View

@@ -53,6 +53,10 @@ class SignIn : Fragment() {
             validateEmail()
         }
 
+        passwordEditText.doAfterTextChanged {
+            validatePassword()
+        }
+
         return view
     }
 
@@ -61,10 +65,10 @@ class SignIn : Fragment() {
         var validEmail = android.util.Patterns.EMAIL_ADDRESS.matcher(emailEditText.text.toString()).matches()
 
         if (validEmail) {
-            emailTextView.text = "Email - Valid!"
+            emailTextView.text = "Email - Valida!"
             emailTextView.setTextColor(Color.parseColor("#2ecc71"))
         } else {
-            emailTextView.text = "Email - Invalid!"
+            emailTextView.text = "Email - Invalida!"
             emailTextView.setTextColor(Color.parseColor("#e74c3c"))
         }
 
@@ -74,5 +78,54 @@ class SignIn : Fragment() {
         }
 
         return validEmail
+    }
+
+    fun validatePassword(): Boolean {
+        var password = passwordEditText.text.toString()
+
+        var passwordIssues = ArrayList<String>()
+
+        if (password.length < 8) {
+            passwordIssues.add("Massa curta")
+        }
+
+        if ("[A-Z]".toRegex().find(password) == null) {
+            passwordIssues.add("Sense majuscula")
+        }
+
+        if ("[a-z]".toRegex().find(password) == null) {
+            passwordIssues.add("Sense minuscula")
+        }
+
+        if ("[1-9]".toRegex().find(password) == null) {
+            passwordIssues.add("Sense nombre")
+        }
+
+        if (passwordIssues.isEmpty()) {
+            passwordTextView.text = "Password - Valid!"
+            passwordTextView.setTextColor(Color.parseColor("#2ecc71"))
+        } else {
+            var issues = "Password - Invalida!"
+
+            for (index in 0..(passwordIssues.lastIndex)) {
+                val issue = passwordIssues.get(index)
+
+                issues = issues + when {
+                    index == 0 -> " ${issue}"
+                    index < passwordIssues.lastIndex -> ", ${issue}"
+                    else -> ", ${issue}!"
+                }
+            }
+
+            passwordTextView.text = issues
+            passwordTextView.setTextColor(Color.parseColor("#e74c3c"))
+        }
+
+        if (password.isEmpty()) {
+            passwordTextView.text = "Password"
+            passwordTextView.setTextColor(Color.parseColor("#ffffff"))
+        }
+
+        return passwordIssues.isEmpty()
     }
 }

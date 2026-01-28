@@ -34,7 +34,10 @@
         app:layout_constraintVertical_bias="0.3">
 
 
+
+
         <LinearLayout
+            android:id="@+id/cardViewLogIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -44,6 +47,7 @@
 
 
             <TextView
+                android:id="@+id/tvEmailLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -55,7 +59,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:id="@+id/email"
+                android:id="@+id/txtEmail"
                 android:background="@color/white"
                 android:layout_marginBottom="24dp"
                 android:paddingStart="16dp"
@@ -67,6 +71,7 @@
 
 
             <TextView
+                android:id="@+id/tvPassLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Contrasenya"
@@ -78,7 +83,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:id="@+id/password"
+                android:id="@+id/txtPassword"
                 android:background="@color/white"
                 android:layout_marginBottom="32dp"
                 android:paddingStart="16dp"
@@ -94,7 +99,7 @@
                 android:layout_height="52dp"
                 android:text="Inicia sessió"
                 android:id="@+id/btnLogIn"
-                android:textSize="18sp"
+                android:textSize="18dp"
                 android:textStyle="bold"
                 android:backgroundTint="@color/background_button"
                 android:textColor="@color/white"
@@ -117,13 +122,25 @@
                 android:textColor="@color/white"
                 android:backgroundTint="@color/background_button"
                 android:textStyle="bold"
-                android:textSize="16dp"
+                android:textSize="18dp"
                 app:cornerRadius="12dp"
                 />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/background_button"
+        android:text="He oblidat la contrasenya"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:cornerRadius="12dp"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

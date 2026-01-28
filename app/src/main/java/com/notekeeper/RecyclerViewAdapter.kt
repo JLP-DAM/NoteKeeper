@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
    Aquest es l'adapter, es l'abstracció que ens permet interactuar entre els fitxers de Kotlin
    i el holder
  */
-class RecyclerViewAdapter(
+class  RecyclerViewAdapter(
     private var items: List<NoteListItem>,
     private val onItemClick: (NoteListItem) -> Unit
 ) : RecyclerView.Adapter<RecyclerViewHolder>() {

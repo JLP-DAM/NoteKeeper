@@ -1,13 +1,24 @@
 package com.notekeeper
 
+import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import androidx.core.widget.doAfterTextChanged
 
 class SignIn : Fragment() {
+
+    lateinit var emailEditText: EditText
+    lateinit var passwordEditText: EditText
+
+    lateinit var emailTextView: TextView
+    lateinit var passwordTextView: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -18,7 +29,19 @@ class SignIn : Fragment() {
 
         val btnSignIn = view.findViewById<Button>(R.id.btnSignIn)
 
+        emailTextView = view.findViewById<EditText>(R.id.emailTitle)
+        passwordTextView = view.findViewById<EditText>(R.id.passwordTitle)
+
+        emailEditText = view.findViewById<EditText>(R.id.email)
+        passwordEditText = view.findViewById<EditText>(R.id.password)
+
         btnSignIn.setOnClickListener {
+            // Definim l'Email i la contrasenya per la Sessió actual
+            // Obviament ho cambiarem quan fem el backend amb la base de
+            // dades
+            Session.setEmail(emailEditText.text.toString())
+            Session.setPassword(passwordEditText.text.toString())
+
             //Permite passar de un fragment a otro
             parentFragmentManager.beginTransaction()
                 .replace(R.id.fragmentContainer, Profile())
@@ -26,6 +49,83 @@ class SignIn : Fragment() {
                 .commit()
         }
 
+        emailEditText.doAfterTextChanged {
+            validateEmail()
+        }
+
+        passwordEditText.doAfterTextChanged {
+            validatePassword()
+        }
+
         return view
+    }
+
+    // Validem si el correu es funcional o no i tornem el valor
+    fun validateEmail(): Boolean {
+        var validEmail = android.util.Patterns.EMAIL_ADDRESS.matcher(emailEditText.text.toString()).matches()
+
+        if (validEmail) {
+            emailTextView.text = "Email - Valida!"
+            emailTextView.setTextColor(Color.parseColor("#2ecc71"))
+        } else {
+            emailTextView.text = "Email - Invalida!"
+            emailTextView.setTextColor(Color.parseColor("#e74c3c"))
+        }
+
+        if (emailEditText.text.isEmpty()) {
+            emailTextView.text = "Email"
+            emailTextView.setTextColor(Color.parseColor("#ffffff"))
+        }
+
+        return validEmail
+    }
+
+    fun validatePassword(): Boolean {
+        var password = passwordEditText.text.toString()
+
+        var passwordIssues = ArrayList<String>()
+
+        if (password.length < 8) {
+            passwordIssues.add("Massa curta")
+        }
+
+        if ("[A-Z]".toRegex().find(password) == null) {
+            passwordIssues.add("Sense majuscula")
+        }
+
+        if ("[a-z]".toRegex().find(password) == null) {
+            passwordIssues.add("Sense minuscula")
+        }
+
+        if ("[1-9]".toRegex().find(password) == null) {
+            passwordIssues.add("Sense nombre")
+        }
+
+        if (passwordIssues.isEmpty()) {
+            passwordTextView.text = "Password - Valid!"
+            passwordTextView.setTextColor(Color.parseColor("#2ecc71"))
+        } else {
+            var issues = "Password - Invalida!"
+
+            for (index in 0..(passwordIssues.lastIndex)) {
+                val issue = passwordIssues.get(index)
+
+                issues = issues + when {
+                    index == 0 -> " ${issue}"
+                    index < passwordIssues.lastIndex -> ", ${issue}"
+                    else -> ", ${issue}!"
+                }
+            }
+
+            passwordTextView.text = issues
+            passwordTextView.setTextColor(Color.parseColor("#e74c3c"))
+        }
+
+        if (password.isEmpty()) {
+            passwordTextView.text = "Password"
+            passwordTextView.setTextColor(Color.parseColor("#ffffff"))
+        }
+
+        return passwordIssues.isEmpty()
     }
 }

@@ -2,7 +2,6 @@ package com.notekeeper
 
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +9,10 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.widget.doAfterTextChanged
+import androidx.fragment.app.activityViewModels
+import kotlin.getValue
 
 class SignIn : Fragment() {
 
@@ -19,6 +21,8 @@ class SignIn : Fragment() {
 
     lateinit var emailTextView: TextView
     lateinit var passwordTextView: TextView
+
+    private val currentSession: Session by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,15 +40,27 @@ class SignIn : Fragment() {
         passwordEditText = view.findViewById<EditText>(R.id.password)
 
         btnSignIn.setOnClickListener {
-            // Definim l'Email i la contrasenya per la Sessió actual
-            // Obviament ho cambiarem quan fem el backend amb la base de
+            // Definim l'Email i la contrasenya per la Sessió actual si estan d'acord amb el
+            // filtre, obviament ho cambiarem quan fem el backend amb la base de
             // dades
-            Session.setEmail(emailEditText.text.toString())
-            Session.setPassword(passwordEditText.text.toString())
+            if (!validateEmail()) {
+                Toast.makeText(context, "Registre Fallat - Email Invalid", Toast.LENGTH_SHORT).show()
+
+                return@setOnClickListener
+            }
+
+            if (!validatePassword()) {
+                Toast.makeText(context, "Registre Fallat - Contrasenya Invalida", Toast.LENGTH_SHORT).show()
+
+                return@setOnClickListener
+            }
+
+            currentSession.setEmail(emailEditText.text.toString())
+            currentSession.setPassword(passwordEditText.text.toString())
 
             //Permite passar de un fragment a otro
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainer, Profile())
+                .replace(R.id.fragmentContainer, LogIn())
                 .addToBackStack(null)
                 .commit()
         }
@@ -61,6 +77,7 @@ class SignIn : Fragment() {
     }
 
     // Validem si el correu es funcional o no i tornem el valor
+    // També representem si es un correu apropiat
     fun validateEmail(): Boolean {
         var validEmail = android.util.Patterns.EMAIL_ADDRESS.matcher(emailEditText.text.toString()).matches()
 
@@ -80,6 +97,8 @@ class SignIn : Fragment() {
         return validEmail
     }
 
+    // Validem si la contrasenya es valida o no, retornant la seva validesa
+    // També representem si es una contrasenya suficientment forta
     fun validatePassword(): Boolean {
         var password = passwordEditText.text.toString()
 

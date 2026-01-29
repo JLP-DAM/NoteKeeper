@@ -8,12 +8,13 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import androidx.fragment.app.viewModels // RECORDA IMPORTAR AIXÒ
+import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
+import androidx.fragment.app.activityViewModels
 
 class LogIn : Fragment () {
 
-    private val logInViewModel : LogInViewModel by viewModels()
+    private val currentSession: Session by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,42 +28,33 @@ class LogIn : Fragment () {
 
         val etEmail = view.findViewById<EditText>(R.id.txtEmail)
         val etPassword = view.findViewById<EditText>(R.id.txtPassword)
-        val tvEmailLabel = view.findViewById<TextView>(R.id.tvEmailLabel)
-        val tvPassLabel = view.findViewById<TextView>(R.id.tvPassLabel)
         val btnLogIn = view.findViewById<Button>(R.id.btnLogIn)
         val btnInciarSession = view.findViewById<Button>(R.id.btnInciarSession)
 
-        //addTextChangedListener lee el email o lo que le pases
-        //toString le pasas con String prq si no te sale la direcion donde esta guardado
-        //it se pone coger lo que esta poniendo el usuario en el momento aunque tmb puede poner etEmail
-
-        etEmail.addTextChangedListener {
-            logInViewModel.onLoginChanged(it.toString(), etPassword.text.toString())
-        }
-
-        etPassword.addTextChangedListener {
-            logInViewModel.onLoginChanged(etEmail.text.toString(), it.toString())
-        }
-
-        logInViewModel.isLoginEnabled.observe(viewLifecycleOwner) { activo ->
-            btnLogIn.isEnabled = activo
-        }
-
-        logInViewModel.emailLabelText.observe(viewLifecycleOwner) { nuevoTexto ->
-            tvEmailLabel.text = nuevoTexto
-        }
-        logInViewModel.emailLabelColor.observe(viewLifecycleOwner) { nuevoColor ->
-            tvEmailLabel.setTextColor(nuevoColor)
-        }
-
-        logInViewModel.passLabelText.observe(viewLifecycleOwner) { nuevoTexto ->
-            tvPassLabel.text = nuevoTexto
-        }
-        logInViewModel.passLabelColor.observe(viewLifecycleOwner) { nuevoColor ->
-            tvPassLabel.setTextColor(nuevoColor)
-        }
-
+        // Ens asegurem de que hi hagi un registre fet (serà diferent quan hi hagi la base de dades)
+        // I ens asegurem de que l'email i la contrasenya son els mateixos del registre
+        // Si esta tot en el seu lloc, farem un log in, si no, un toast d'error apareixerà
         btnLogIn.setOnClickListener {
+            if (currentSession.email.value == "") {
+                Toast.makeText(context, "No hi ha sessió per iniciar - Considera Registrarte", Toast.LENGTH_SHORT).show()
+
+                return@setOnClickListener
+            }
+
+            if (etEmail.text.toString() != currentSession.email.value) {
+                Toast.makeText(context, "Inici de Sessió Fallat - Email Incorrecte", Toast.LENGTH_SHORT).show()
+
+                return@setOnClickListener
+            }
+
+            if (etPassword.text.toString() != currentSession.password.value) {
+                Toast.makeText(context, "Inici de Sessió Fallat - Contrasenya Incorrecte", Toast.LENGTH_SHORT).show()
+
+                return@setOnClickListener
+            }
+
+            currentSession.setIsLoggedIn(true)
+
             parentFragmentManager.beginTransaction()
                 .replace(R.id.fragmentContainer, Profile())
                 .addToBackStack(null)

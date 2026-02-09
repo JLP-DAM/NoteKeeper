@@ -5,22 +5,26 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class LogInViewModel : ViewModel() {
+class SignInViewModel : ViewModel() {
+
 
     // Tenemos dos variables que guardan el mismo valor
     // Una es privada y mutable, se usa dentro del ViewModel para actualizar los valores
     // Empieza con un guion bajo porque es privada y no se puede acceder desde fuera
     // La otra es pública e inmutable, y se usa para mostrar los datos al usuario
     // Ambas variables se almacenan en LiveData ya que permite guardar lo que el usuario en el momento
-    private val _isLoginEnabled = MutableLiveData<Boolean>(false)
-    val isLoginEnabled: LiveData<Boolean> = _isLoginEnabled
 
+    private val _isSignInEnabled = MutableLiveData<Boolean>(false)
+    val isSignInEnabled: LiveData<Boolean> = _isSignInEnabled
+
+    //Otras variables que hacen algo parecido para el Email
     private val _emailLabelText = MutableLiveData<String>("Email")
     val emailLabelText: LiveData<String> = _emailLabelText
 
     private val _emailLabelColor = MutableLiveData<Int>(Color.WHITE)
     val emailLabelColor: LiveData<Int> = _emailLabelColor
 
+    //Otras variables para la Contraseña
     private val _passLabelText = MutableLiveData<String>("Contraseña")
     val passLabelText: LiveData<String> = _passLabelText
 
@@ -28,11 +32,17 @@ class LogInViewModel : ViewModel() {
     val passLabelColor: LiveData<Int> = _passLabelColor
 
 
-    fun onLoginChanged(emailInput: String, passwordInput: String) {
+    fun registrarEnRepositorio(email: String, pass: String) {
+        // El ViewModel le dice al repositorio que guarde los datos
+        UserRepository.registrarUsuario(email, pass)
+    }
+
+
+    fun onSignInChanged(emailInput: String, passwordInput: String) {
 
         val emailEsValido = emailInput.contains("@") && emailInput.contains(".")
 
-        //Si esta vació el email el warnig se muestra en blanco
+        //Si esta en blanco el warnig se muestra en blanco
         if (emailInput.isEmpty()) {
             _emailLabelText.value = "Email"
             _emailLabelColor.value = Color.WHITE
@@ -65,11 +75,11 @@ class LogInViewModel : ViewModel() {
             }
         }
 
-        //Si email y contraseña esta bien pues pueden passar
+        //Si email y contraseña esta bien pues pueden registrarse
         if (emailEsValido && passEsFuerte) {
-            _isLoginEnabled.value = true
+            _isSignInEnabled.value = true
         } else {
-            _isLoginEnabled.value = false
+            _isSignInEnabled.value = false
         }
     }
 

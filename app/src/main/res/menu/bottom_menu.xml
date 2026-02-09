@@ -6,11 +6,6 @@
         android:title="@string/home"
         />
     <item
-        android:id="@+id/nav_bin"
-        android:icon="@drawable/bin"
-        android:title="@string/bin"
-        />
-    <item
         android:id="@+id/nav_add"
         android:icon="@drawable/add"
         android:title="@string/add"

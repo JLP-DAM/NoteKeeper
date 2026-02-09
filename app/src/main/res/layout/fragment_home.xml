@@ -6,15 +6,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Home">
 
+
+    <ImageButton
+        android:id="@+id/iBtnBin"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/bin"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:tint="@color/white"
+        />
     <ImageView
+        android:id="@+id/iLogo"
         android:layout_width="200dp"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:gravity="center"
         android:src="@drawable/notekeeper"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="40dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/iBtnBin"/>
 
     <EditText
         android:id="@+id/search"
@@ -24,9 +39,9 @@
         android:backgroundTint="@color/white"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iLogo"
         android:hint="   Busca..."
-        android:layout_marginTop="80dp"/>
+        android:layout_marginTop="10dp"/>
 
     <ImageButton
         android:layout_width="32dp"
@@ -53,8 +68,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/notes"
-        android:layout_height="500dp"
-        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search"

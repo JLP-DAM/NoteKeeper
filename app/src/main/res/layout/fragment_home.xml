@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background_app"
     tools:context=".Home">
 
 
@@ -40,6 +41,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iLogo"
+        android:paddingStart="15dp"
+        android:paddingEnd="45dp"
         android:hint="   Busca..."
         android:layout_marginTop="10dp"/>
 

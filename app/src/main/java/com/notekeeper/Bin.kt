@@ -26,6 +26,16 @@ class Bin : Fragment() {
     ): View? {
         val BinFragmentView = inflater.inflate(R.layout.fragment_bin, container, false)
 
+        val iBtnBack = BinFragmentView.findViewById<ImageButton>(R.id.iBtnBack)
+
+        iBtnBack.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, Home())
+                .addToBackStack(null)
+                .commit()
+        }
+
+
         val currentView = BinFragmentView
 
         if (currentView != null) {

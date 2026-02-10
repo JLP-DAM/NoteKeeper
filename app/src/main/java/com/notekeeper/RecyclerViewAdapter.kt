@@ -2,6 +2,8 @@ package com.notekeeper
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.PopupMenu
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
 /*
@@ -27,6 +29,34 @@ class RecyclerViewAdapter(
     override fun onBindViewHolder(holder: RecyclerViewHolder, position: Int) {
         val item = items[position]
         holder.bind(item)
+
+        // Programació de l'esdeveniment per als tres punts (PopupMenu)
+        holder.btnMenuMore.setOnClickListener { view ->
+            val popup = PopupMenu(view.context, view)
+
+            // Infla el menú d'opcions de la nota
+            popup.menuInflater.inflate(R.menu.menu_nota_item, popup.menu)
+
+            // Gestiona el clic en les opcions del menú desplegable
+            popup.setOnMenuItemClickListener { menuItem ->
+                when (menuItem.itemId) {
+                    R.id.action_move_to_bin -> {
+                        // Lògica per moure la nota a la llista de la papelera
+                        onItemClick(item)
+                        true
+                    }
+
+                    R.id.action_edit_note -> {
+                        // Cridem a la funció onItemClick per editar la nota
+                        onItemClick(item)
+                        true
+                    }
+
+                    else -> false
+                }
+            }
+            popup.show()
+        }
     }
 
     // Per ensenyar la llista modificada enviem una nova llista i cridem notifyDataSetChanged()

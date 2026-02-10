@@ -5,19 +5,42 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/background_app"
+    android:padding="16dp"
     tools:context=".Bin">
 
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:src="@drawable/notekeeper"
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="40dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+    <ImageButton
+        android:id="@+id/iBtnBack"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/atras"
+        app:tint="@color/white"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/txtPapelera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:textSize="20sp"
+        android:text="Papelera"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/iBtnBack"
+        app:layout_constraintStart_toEndOf="@+id/iBtnBack"
+        app:layout_constraintTop_toTopOf="@+id/iBtnBack" />
+
+    <ImageView
+        android:id="@+id/iLogo"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:src="@drawable/notekeeper"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iBtnBack" />
 
     <EditText
         android:id="@+id/search"
@@ -25,25 +48,15 @@
         android:layout_height="40dp"
         android:background="@drawable/roundstyle"
         android:backgroundTint="@color/white"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:hint="   Busca..."
-        android:layout_marginTop="80dp"
-        />
-
-
-    <ImageButton
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:src="@drawable/baseline_search_24"
-        app:layout_constraintRight_toRightOf="@id/search"
-        app:layout_constraintTop_toTopOf="@id/search"
-        android:layout_marginRight="4dp"
-        android:layout_marginTop="4dp"
-        android:background="@color/transparent"
-        app:tint="@color/black"
-        />
+        android:hint="Busca..."
+        android:paddingStart="15dp"
+        android:paddingEnd="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintEnd_toStartOf="@+id/filter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iLogo" />
 
     <ImageButton
         android:id="@+id/filter"
@@ -59,12 +72,10 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/notes"
-        android:layout_height="500dp"
-        android:layout_width="300dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search"
-        android:layout_marginTop="30dp"
-        />
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

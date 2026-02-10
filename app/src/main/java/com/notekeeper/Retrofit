@@ -1,0 +1,14 @@
+#Retrofit en Android
+
+El retrofit es un heramienta para guardar información para mandarlo a API cual se encraga de
+dar un respuesta retrofit. Mientras que el retrofit espera la respota la pantalla se queda congelado
+y el usuario no puede hacer nada mas por eso tenemos las cortinar que permite al retrofit hacer otras cosas
+mientra no recibi una respuesta.
+
+Tenemos diferentes tipos de cortinas:
+
+Scope
+
+GlobalScope: En el app hay procesos que siguen abiertos aunque cierres la app (Perillós, si t'oblides d'ell, es queda consumint recursos).
+
+lifecycleScope / viewModelScope: Que se cierran cuando cierras la app

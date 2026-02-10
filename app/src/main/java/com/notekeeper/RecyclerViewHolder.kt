@@ -2,6 +2,7 @@ package com.notekeeper
 
 import android.util.Log
 import android.view.View
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -14,6 +15,8 @@ class RecyclerViewHolder(
 
     private val nameTextView: TextView = itemView.findViewById(R.id.name)
     private val testTextView: TextView = itemView.findViewById(R.id.text)
+
+    val btnMenuMore: ImageButton = itemView.findViewById(R.id.iBtnMenuMore)
 
     // Connecta el "Item" a la CardView i "connecta" el listener per activar la funció onItemClick
     // al clicar-ho que s'ha enviat previament
